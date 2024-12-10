@@ -28,7 +28,7 @@
         
         <div>
           <h3>Reserve Seats</h3> 
-            <label for="reservedSeats">Reserve seats by listing Name:Seat (one per line): </label>
+            <label for="reservedSeats">Reserve seats by listing "Name:Seat" (One per line): </label>
             <textarea id="reservedSeats" placeholder="e.g.: Smith, John:10 (or Jane Doe:25)(or Faculty:76)"></textarea>
         </div>
         <button onclick="assignSeats()">Assign Seats</button>
@@ -86,7 +86,7 @@
             const resultDiv = document.getElementById('result');
             resultDiv.innerHTML = '<h2>Seat Assignments</h2>';
             for (const [student, seat] of Object.entries(seatAssignments)) {
-                resultDiv.innerHTML += `<p>${student}: Seat ${seat}</p><hr>`;
+                resultDiv.innerHTML += `${student} — Seat: ${seat}</br>;
             }
         }
     </script>
