@@ -14,12 +14,14 @@
 <body>
     <div class="container">
         <h1>Seat Randomizer</h1>
-        <textarea id="studentNames" placeholder="Enter student names, one per line"></textarea>
         <div>
-            <label for="totalSeats">Room Capacity (total available seats: </label>
+            <label for="totalSeats">Room Capacity (i.e.: total available seats) </label>
             <input type="number" id="totalSeats" value="10" min="1" max="999">
         </div>
+        <h3>Student list</h3> 
+        <textarea id="studentNames" placeholder="Enter student names, one per line"></textarea>
         <div>
+         
             <label for="reservedSeats">Reserved Seats (name:seat, one per line): </label>
             <textarea id="reservedSeats" placeholder="e.g., John:1"></textarea>
         </div>
