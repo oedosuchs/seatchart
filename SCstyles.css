@@ -39,7 +39,7 @@
             text-align: left;
         }
         textarea {
-            width: 95%;
+            width: 98%;
             height: 100px;
             margin: 5px 100px 10px 0px;
                 padding: 5px;
@@ -51,7 +51,7 @@
             border: none;
             height: 2px;
             background-color: #fdb35a;
-            margin: 0px 0px 15px;
+            margin: 0px 0px 25px;
         }
         h1 {
             margin: 0px; 
