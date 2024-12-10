@@ -21,12 +21,12 @@
             max-width: 600px;
         }
         button {
-            justify-content: right;
+            aligh-self: right;
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
             border: none;
-            background-color: #fdb35a;
+            background-color: red; /* #fdb35a; */
             color: white;
             border-radius: 5px;
         }
