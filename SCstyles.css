@@ -39,10 +39,9 @@
             text-align: left;
         }
         textarea {
-            padding: 25px;
-        width: 100%;
+            width: 100%;
             height: 100px;
-            margin-bottom: 20px;
+            margin: 25px;
         }
         input[type="number"] {
             width: 60px;
