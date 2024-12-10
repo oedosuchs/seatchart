@@ -1,149 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seat Number Randomizer</title>
-    <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Trebuchet, sans-serif;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             height: 100vh;
-            background-color: #f0f0f0;
+            background-color: grey;
             margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
         }
         .container {
             text-align: center;
-            background: #fff;
-            padding: 20px;
+            background: #f2f2f2;
+            padding: 25px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-height: 100%;
+            overflow-y: auto;
+            width: 100%;
+            max-width: 600px;
         }
         button {
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
             border: none;
-            background-color: #007BFF;
+            background-color: #fdb35a;
             color: white;
             border-radius: 5px;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #D18530;
         }
         .result {
             margin-top: 20px;
-            font-size: 18px;
+            font-size: 14px;
             text-align: left;
         }
         textarea {
             width: 100%;
             height: 100px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
         input[type="number"] {
             width: 60px;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
+        hr {
+            border: none;
+            height: 2px;
+            background-color: #fdb35a;
+            margin: 10px 0;
         }
-        table, th, td {
-            border: 1px solid black;
+        h1 {
+            font-family: 'Arvo', serif;
+            font-size: 250%;
         }
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Seat Number Randomizer 3</h1>
-        <textarea id="studentNames" placeholder="Enter student names, one per line"></textarea>
-        <div>
-            <label for="totalSeats">Total Seats: </label>
-            <input type="number" id="totalSeats" value="10" min="1" max="999">
-        </div>
-        <div>
-            <label for="reservedSeats">Reserved Seats (name:seat, one per line): </label>
-            <textarea id="reservedSeats" placeholder="e.g., John:1"></textarea>
-        </div>
-        <button onclick="assignSeats()">Assign Seats</button>
-        <button onclick="downloadTable()">Download Table</button>
-        <div class="result" id="result"></div>
-    </div>
-
-    <script>
-        function assignSeats() {
-            const studentNames = document.getElementById('studentNames').value.trim().split('\n').map(name => name.trim()).filter(name => name);
-            const totalSeats = parseInt(document.getElementById('totalSeats').value);
-            const reservedSeatsInput = document.getElementById('reservedSeats').value.trim().split('\n').map(entry => entry.trim()).filter(entry => entry);
-            const reservedSeats = {};
-
-            reservedSeatsInput.forEach(entry => {
-                const [name, seat] = entry.split(':').map(item => item.trim());
-                reservedSeats[name] = parseInt(seat);
-            });
-
-            const availableSeats = Array.from({ length: totalSeats }, (_, i) => i + 1).filter(seat => !Object.values(reservedSeats).includes(seat));
-            const unassignedStudents = studentNames.filter(name => !reservedSeats[name]);
-
-            if (unassignedStudents.length > availableSeats.length) {
-                alert('Not enough seats for all students.');
-                return;
-            }
-
-            const evenlyDistributedSeats = distributeSeatsEvenly(availableSeats, unassignedStudents.length);
-            const seatAssignments = { ...reservedSeats };
-
-            unassignedStudents.forEach((student, index) => {
-                seatAssignments[student] = evenlyDistributedSeats[index];
-            });
-
-            displayResults(seatAssignments);
-        }
-
-        function distributeSeatsEvenly(seats, count) {
-            const step = Math.floor(seats.length / count);
-            const distributedSeats = [];
-            for (let i = 0; i < count; i++) {
-                distributedSeats.push(seats[i * step]);
-            }
-            return distributedSeats;
-        }
-
-        function displayResults(seatAssignments) {
-            const resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = '<h2>Seat Assignments</h2><table><tr><th>Student</th><th>Seat</th></tr>';
-            for (const [student, seat] of Object.entries(seatAssignments)) {
-                resultDiv.innerHTML += `<tr><td>${student}</td><td>${seat}</td></tr>`;
-            }
-            resultDiv.innerHTML += '</table>';
-        }
-
-        function downloadTable() {
-            const resultDiv = document.getElementById('result');
-            const table = resultDiv.querySelector('table');
-            if (!table) {
-                alert('No seat assignments to download.');
-                return;
-            }
-
-            const rows = Array.from(table.rows);
-            const csvContent = rows.map(row => Array.from(row.cells).map(cell => cell.textContent).join(',')).join('\n');
-            const blob = new Blob([csvContent], { type: 'text/csv' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'seat_assignments.csv';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        }
-    </script>
-</body>
-</html>
