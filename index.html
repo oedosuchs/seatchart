@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -44,7 +44,19 @@
             margin-bottom: 10px;
         }
         input[type="number"] {
-            width: 50px;
+            width: 60px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
         }
     </style>
 </head>
@@ -54,13 +66,14 @@
         <textarea id="studentNames" placeholder="Enter student names, one per line"></textarea>
         <div>
             <label for="totalSeats">Total Seats: </label>
-            <input type="number" id="totalSeats" value="10">
+            <input type="number" id="totalSeats" value="10" min="1" max="999">
         </div>
         <div>
             <label for="reservedSeats">Reserved Seats (name:seat, one per line): </label>
             <textarea id="reservedSeats" placeholder="e.g., John:1"></textarea>
         </div>
         <button onclick="assignSeats()">Assign Seats</button>
+        <button onclick="downloadTable()">Download Table</button>
         <div class="result" id="result"></div>
     </div>
 
@@ -84,22 +97,52 @@
                 return;
             }
 
-            const shuffledStudents = unassignedStudents.sort(() => 0.5 - Math.random());
+            const evenlyDistributedSeats = distributeSeatsEvenly(availableSeats, unassignedStudents.length);
             const seatAssignments = { ...reservedSeats };
 
-            shuffledStudents.forEach((student, index) => {
-                seatAssignments[student] = availableSeats[index];
+            unassignedStudents.forEach((student, index) => {
+                seatAssignments[student] = evenlyDistributedSeats[index];
             });
 
             displayResults(seatAssignments);
         }
 
+        function distributeSeatsEvenly(seats, count) {
+            const step = Math.floor(seats.length / count);
+            const distributedSeats = [];
+            for (let i = 0; i < count; i++) {
+                distributedSeats.push(seats[i * step]);
+            }
+            return distributedSeats;
+        }
+
         function displayResults(seatAssignments) {
             const resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = '<h2>Seat Assignments</h2>';
+            resultDiv.innerHTML = '<h2>Seat Assignments</h2><table><tr><th>Student</th><th>Seat</th></tr>';
             for (const [student, seat] of Object.entries(seatAssignments)) {
-                resultDiv.innerHTML += `<p>${student}: Seat ${seat}</p>`;
+                resultDiv.innerHTML += `<tr><td>${student}</td><td>${seat}</td></tr>`;
             }
+            resultDiv.innerHTML += '</table>';
+        }
+
+        function downloadTable() {
+            const resultDiv = document.getElementById('result');
+            const table = resultDiv.querySelector('table');
+            if (!table) {
+                alert('No seat assignments to download.');
+                return;
+            }
+
+            const rows = Array.from(table.rows);
+            const csvContent = rows.map(row => Array.from(row.cells).map(cell => cell.textContent).join(',')).join('\n');
+            const blob = new Blob([csvContent], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'seat_assignments.csv';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
         }
     </script>
 </body>
