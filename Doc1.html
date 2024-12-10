@@ -61,7 +61,7 @@
         }
         h1 {
             font-family: 'Arvo', serif;
-            font-size: 300%;
+            font-size: 200%;
         }
 
         
@@ -69,7 +69,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Seat Number Randomizer 2</h1>
+        <h1>Seat Number Randomizer</h1>
         <textarea id="studentNames" placeholder="Enter student names. One per line"></textarea>
         <div>
             <label for="totalSeats">Total Seats: </label>
@@ -132,13 +132,10 @@
 
         function displayResults(seatAssignments) {
             const resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = '<h2>Seat Assignments</h2>
-                <table>';
+            resultDiv.innerHTML = '<h2>Seat Assignments</h2>';
             for (const [student, seat] of Object.entries(seatAssignments)) {
-                resultDiv.innerHTML += `<tr><td>${student}</td><td>${seat}</td></tr>`;
-
+                resultDiv.innerHTML += `<p>${student}: Seat ${seat}</p><hr>`;
             }
-            resultDiv.innerHTML += '</table>';
         }
     </script>
 </body>
