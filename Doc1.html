@@ -11,12 +11,12 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
+            background-color: #FECC91;
             margin: 0;
         }
         .container {
             text-align: center;
-            background: #fff;
+            background: #FFF7ed;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -26,12 +26,12 @@
             font-size: 16px;
             cursor: pointer;
             border: none;
-            background-color: #007BFF;
+            background-color: #FEDDB6;
             color: white;
             border-radius: 5px;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #FED5A4;
         }
         .result {
             margin-top: 20px;
@@ -62,7 +62,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Seat Number Randomizer Test</h1>
+        <h1>Seat Number Randomizer Test 5</h1>
         <textarea id="studentNames" placeholder="Enter student names, one per line"></textarea>
         <div>
             <label for="totalSeats">Total Seats: </label>
@@ -73,7 +73,6 @@
             <textarea id="reservedSeats" placeholder="e.g., John:1"></textarea>
         </div>
         <button onclick="assignSeats()">Assign Seats</button>
-        <button onclick="downloadTable()">Download Table</button>
         <div class="result" id="result"></div>
     </div>
 
@@ -104,7 +103,7 @@
                 seatAssignments[student] = evenlyDistributedSeats[index];
             });
 
-            displayResults(seatAssignments, totalSeats);
+            displayResults(seatAssignments);
         }
 
         function distributeSeatsEvenly(seats, count) {
@@ -116,34 +115,13 @@
             return distributedSeats;
         }
 
-        function displayResults(seatAssignments, totalSeats) {
+        function displayResults(seatAssignments) {
             const resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = '<h2>Seat Assignments</h2><table><tr><th>Seat</th><th>Student</th></tr>';
-            for (let i = 1; i <= totalSeats; i++) {
-                const student = Object.keys(seatAssignments).find(key => seatAssignments[key] === i) || '';
-                resultDiv.innerHTML += `<tr><td>${i}</td><td>${student}</td></tr>`;
+            resultDiv.innerHTML = '<h2>Seat Assignments</h2><table><tr><th>Student</th><th>Seat</th></tr>';
+            for (const [student, seat] of Object.entries(seatAssignments)) {
+                resultDiv.innerHTML += `<tr><td>${student}</td><td>${seat}</td></tr>`;
             }
             resultDiv.innerHTML += '</table>';
-        }
-
-        function downloadTable() {
-            const resultDiv = document.getElementById('result');
-            const table = resultDiv.querySelector('table');
-            if (!table) {
-                alert('No seat assignments to download.');
-                return;
-            }
-
-            const rows = Array.from(table.rows).slice(1); // Skip header row
-            const csvContent = rows.map(row => Array.from(row.cells).map(cell => cell.textContent).join(',')).join('\n');
-            const blob = new Blob([csvContent], { type: 'text/csv' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'seat_assignments.csv';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
         }
     </script>
 </body>
