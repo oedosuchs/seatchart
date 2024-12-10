@@ -15,10 +15,11 @@
     <div class="container">
         <h1>Seat Randomizer</h1>
         <hr />
+        <h4>Built by David Ernst, Josef Ernst with assistance from MS Copilot.</h4>
         <div>
-            <label for="totalSeats">Room Capacity</label>
+            <h3>Room Capacity</h3>
+            <label for="totalSeats">Total seats available: </label>
             <input type="number" id="totalSeats" value="10" min="1" max="999">
-            (i.e.: total available seats)
         </div>
         <h3>Student list</h3> 
         <textarea id="studentNames" placeholder="Enter student names. One per line."></textarea>
@@ -26,7 +27,7 @@
         <div>
           <h3>Reserve Seats</h3> 
             <label for="reservedSeats">Reserve seats by listing Name:Seat (one per line): </label>
-            <textarea id="reservedSeats" placeholder="e.g.: Smith, John:10 (or Jane Doe:25)(or Facluty:76)"></textarea>
+            <textarea id="reservedSeats" placeholder="e.g.: Smith, John:10 (or Jane Doe:25)(or Facutty:76)"></textarea>
         </div>
         <button onclick="assignSeats()">Assign Seats</button>
         <div class="result" id="result"></div>
