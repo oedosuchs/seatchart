@@ -11,7 +11,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #fdbb6d;
+            background-color: #f0f0f0;
             margin: 0;
         }
         .container {
@@ -46,17 +46,11 @@
         input[type="number"] {
             width: 60px;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
+        hr {
+            border: none;
+            height: 2px;
+            background-color: orange;
+            margin: 10px 0;
         }
     </style>
 </head>
@@ -117,11 +111,10 @@
 
         function displayResults(seatAssignments) {
             const resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = '<h2>Seat Assignments</h2><table><tr><th>Student</th><th>Seat</th></tr>';
+            resultDiv.innerHTML = '<h2>Seat Assignments</h2>';
             for (const [student, seat] of Object.entries(seatAssignments)) {
-                resultDiv.innerHTML += `<tr><td>${student}</td><td>${seat}</td></tr>`;
+                resultDiv.innerHTML += `<p>${student}: Seat ${seat}</p><hr>`;
             }
-            resultDiv.innerHTML += '</table>';
         }
     </script>
 </body>
