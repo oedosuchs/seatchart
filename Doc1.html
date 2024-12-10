@@ -11,7 +11,7 @@
             justify-content: center;
             align-items: flex-start;
             height: 100vh;
-            background-color: orange;
+            background-color: grey;
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
@@ -96,6 +96,7 @@
                 return;
             }
 
+            shuffleArray(availableSeats);
             const evenlyDistributedSeats = distributeSeatsEvenly(availableSeats, unassignedStudents.length);
             const seatAssignments = { ...reservedSeats };
 
@@ -104,6 +105,13 @@
             });
 
             displayResults(seatAssignments);
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
         }
 
         function distributeSeatsEvenly(seats, count) {
