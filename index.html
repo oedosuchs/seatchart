@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seat Number Randomizer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: left;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        input[type="number"] {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Seat Number Randomizer</h1>
+        <textarea id="studentNames" placeholder="Enter student names, one per line"></textarea>
+        <div>
+            <label for="totalSeats">Total Seats: </label>
+            <input type="number" id="totalSeats" value="10">
+        </div>
+        <div>
+            <label for="reservedSeats">Reserved Seats (name:seat, one per line): </label>
+            <textarea id="reservedSeats" placeholder="e.g., John:1"></textarea>
+        </div>
+        <button onclick="assignSeats()">Assign Seats</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function assignSeats() {
+            const studentNames = document.getElementById('studentNames').value.trim().split('\n').map(name => name.trim()).filter(name => name);
+            const totalSeats = parseInt(document.getElementById('totalSeats').value);
+            const reservedSeatsInput = document.getElementById('reservedSeats').value.trim().split('\n').map(entry => entry.trim()).filter(entry => entry);
+            const reservedSeats = {};
+
+            reservedSeatsInput.forEach(entry => {
+                const [name, seat] = entry.split(':').map(item => item.trim());
+                reservedSeats[name] = parseInt(seat);
+            });
+
+            const availableSeats = Array.from({ length: totalSeats }, (_, i) => i + 1).filter(seat => !Object.values(reservedSeats).includes(seat));
+            const unassignedStudents = studentNames.filter(name => !reservedSeats[name]);
+
+            if (unassignedStudents.length > availableSeats.length) {
+                alert('Not enough seats for all students.');
+                return;
+            }
+
+            const shuffledStudents = unassignedStudents.sort(() => 0.5 - Math.random());
+            const seatAssignments = { ...reservedSeats };
+
+            shuffledStudents.forEach((student, index) => {
+                seatAssignments[student] = availableSeats[index];
+            });
+
+            displayResults(seatAssignments);
+        }
+
+        function displayResults(seatAssignments) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<h2>Seat Assignments</h2>';
+            for (const [student, seat] of Object.entries(seatAssignments)) {
+                resultDiv.innerHTML += `<p>${student}: Seat ${seat}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
