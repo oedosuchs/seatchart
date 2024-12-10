@@ -75,11 +75,30 @@
         }
 
         function displayResults(seatAssignments) {
-            const resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = '<h2>Seat Assignments</h2>';
-            for (const [student, seat] of Object.entries(seatAssignments)) {
-                resultDiv.innerHTML += `${student} Seat: ${seat}</br>`;
-            }
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = '<h2>Seat Assignments</h2>';
+    
+    let tableHTML = '<table border="1" style="border-collapse: collapse; width: 100%;">';
+    let rowCount = 0;
+    
+    for (const [student, seat] of Object.entries(seatAssignments)) {
+        if (rowCount % 4 === 0) {
+            tableHTML += '<tr>'; // Start a new row every 4 items
+        }
+        tableHTML += ⁠ <td><strong>${student}</strong>: Seat ${seat}</td> ⁠;
+        rowCount++;
+        if (rowCount % 4 === 0) {
+            tableHTML += '</tr>'; // Close the row after 4 items
+        }
+    }
+    
+    if (rowCount % 4 !== 0) {
+        tableHTML += '</tr>'; // Close the last row if it's incomplete
+    }
+    
+    tableHTML += '</table>';
+    resultDiv.innerHTML += tableHTML;
+}
         }
     </script>
 </body>
