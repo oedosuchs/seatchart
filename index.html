@@ -13,21 +13,20 @@
 </head>
 <body>
     <div class="container">
-        <h1>Seat Randomizer</h1>
-        <textarea id="studentNames" placeholder="Enter student names. One per line"></textarea>
+        <h1>Seat Number Randomizer</h1>
+        <textarea id="studentNames" placeholder="Enter student names, one per line"></textarea>
         <div>
-            <label for="totalSeats">Room Capacity (available seats) </label>
+            <label for="totalSeats">Total Seats: </label>
             <input type="number" id="totalSeats" value="10" min="1" max="999">
         </div>
         <div>
-            <label for="reservedSeats">
-                Reserve seats by listing "Name:Seat" (one per line)</label>
-            <textarea id="reservedSeats" placeholder="for example: John Doe:10, Faculty:96 (list one per line)"</textarea>
+            <label for="reservedSeats">Reserved Seats (name:seat, one per line): </label>
+            <textarea id="reservedSeats" placeholder="e.g., John:1"></textarea>
         </div>
         <button onclick="assignSeats()">Assign Seats</button>
         <div class="result" id="result"></div>
     </div>
-
+    
     <script>
         function assignSeats() {
             const studentNames = document.getElementById('studentNames').value.trim().split('\n').map(name => name.trim()).filter(name => name);
