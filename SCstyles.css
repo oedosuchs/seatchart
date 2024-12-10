@@ -69,7 +69,6 @@
         }
         h4 {
             font-weight: normal;
-            margin: 0px; 
             padding: 0px;
             font-family: Trebuchet, sans-serif;
             font-size: 80%;
@@ -77,4 +76,7 @@
             color: #AEB0B0;
             margin: 5px 0px 10px 0px;
         }
-
+        p {
+            font-weight: normal;
+            margin: 0px; 
+        }
