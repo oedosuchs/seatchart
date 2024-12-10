@@ -11,7 +11,7 @@
             justify-content: center;
             align-items: flex-start;
             height: 100vh;
-            background-color: grey;
+            background-color: #f2f2f2;
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
@@ -96,8 +96,8 @@
                 return;
             }
 
-            shuffleArray(availableSeats);
             const evenlyDistributedSeats = distributeSeatsEvenly(availableSeats, unassignedStudents.length);
+            shuffleArray(evenlyDistributedSeats);
             const seatAssignments = { ...reservedSeats };
 
             unassignedStudents.forEach((student, index) => {
