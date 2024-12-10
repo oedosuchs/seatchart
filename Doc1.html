@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet'>
     <title>Seat Number Randomizer</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Vardana, sans-serif;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             height: 100vh;
-            background-color: #f2f2f2;
+            background-color: #grey;
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
         }
         .container {
             text-align: center;
-            background: #fff;
-            padding: 20px;
+            background: #f2f2f2;
+            padding: 25px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-height: 100%;
@@ -29,25 +30,25 @@
         }
         button {
             padding: 10px 20px;
-            font-size: 16px;
+            font-size: 14px;
             cursor: pointer;
             border: none;
-            background-color: #007BFF;
+            background-color: #fdbb6d;
             color: white;
             border-radius: 5px;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #fdb35a;
         }
         .result {
             margin-top: 20px;
-            font-size: 18px;
+            font-size: 12px;
             text-align: left;
         }
         textarea {
             width: 100%;
             height: 100px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
         input[type="number"] {
             width: 60px;
@@ -55,15 +56,20 @@
         hr {
             border: none;
             height: 2px;
-            background-color: orange;
+            background-color: fdb35a;
             margin: 10px 0;
         }
+        h1 {
+            font-family: 'Arvo', serif;
+        }
+
+        
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Seat Number Randomizer</h1>
-        <textarea id="studentNames" placeholder="Enter student names, one per line"></textarea>
+        <textarea id="studentNames" placeholder="Enter student names. One per line"></textarea>
         <div>
             <label for="totalSeats">Total Seats: </label>
             <input type="number" id="totalSeats" value="10" min="1" max="999">
