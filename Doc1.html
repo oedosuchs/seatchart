@@ -61,7 +61,7 @@
         }
         h1 {
             font-family: 'Arvo', serif;
-            font-size: 200%;
+            font-size: 250%;
         }
 
         
@@ -134,7 +134,7 @@
             const resultDiv = document.getElementById('result');
             resultDiv.innerHTML = '<h2>Seat Assignments</h2>';
             for (const [student, seat] of Object.entries(seatAssignments)) {
-                resultDiv.innerHTML += `<p>${student}: Seat ${seat}</p><hr>`;
+                resultDiv.innerHTML += `${student} Seat: ${seat}</br>`;
             }
         }
     </script>
