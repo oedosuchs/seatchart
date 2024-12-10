@@ -78,28 +78,34 @@
 
         function displayResults(seatAssignments) {
     const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = '<h2>Seat Assignments</h2>';
-    
+    resultDiv.innerHTML = '<h2>Seat Assignments</h2>'; // Add a header
+
+    // Initialize table HTML
     let tableHTML = '<table border="1" style="border-collapse: collapse; width: 100%;">';
-    let rowCount = 0;
-    
+    let rowOpen = false; // Track if a row is open
+    let colCount = 0; // Track column count
+
     for (const [student, seat] of Object.entries(seatAssignments)) {
-        if (rowCount % 4 === 0) {
-            tableHTML += '<tr>'; // Start a new row every 4 items
+        if (colCount % 4 === 0) { // Start a new row every 4 columns
+            if (rowOpen) {
+                tableHTML += '</tr>'; // Close the previous row if open
+            }
+            tableHTML += '<tr>';
+            rowOpen = true;
         }
-        tableHTML += ⁠ <td><strong>${student}</strong>: Seat ${seat}</td> ⁠;
-        rowCount++;
-        if (rowCount % 4 === 0) {
-            tableHTML += '</tr>'; // Close the row after 4 items
-        }
+
+        // Add a cell with student and seat info
+        tableHTML += ⁠ <td style="padding: 8px; text-align: left;"><strong>${student}</strong>: Seat ${seat}</td> ⁠;
+        colCount++;
     }
-    
-    if (rowCount % 4 !== 0) {
-        tableHTML += '</tr>'; // Close the last row if it's incomplete
+
+    // Close the last row if it's still open
+    if (rowOpen) {
+        tableHTML += '</tr>';
     }
-    
-    tableHTML += '</table>';
-    resultDiv.innerHTML += tableHTML;
+
+    tableHTML += '</table>'; // Close the table
+    resultDiv.innerHTML += tableHTML; // Update the result div
 }
         }
     </script>
