@@ -21,7 +21,7 @@
             max-width: 600px;
         }
         button {
-            aligh-self: right;
+            aligh-self: end;
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
