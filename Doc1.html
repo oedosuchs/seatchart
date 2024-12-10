@@ -134,10 +134,11 @@
             resultDiv.innerHTML = '<h2>Seat Assignments</h2>
                 <table>';
             for (const [student, seat] of Object.entries(seatAssignments)) {
-                resultDiv.innerHTML += `<tr><td>${student}</td><td>Seat ${seat}</td></tr>`;
+                resultDiv.innerHTML += `<tr><td>${student}</td><td>${seat}</td></tr>`;
 
             }
-        }</table>
+            resultDiv.innerHTML += '</table>';
+        }
     </script>
 </body>
 </html>
