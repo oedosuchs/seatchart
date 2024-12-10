@@ -67,3 +67,12 @@
             font-size: 115%;
             text-align: left;
         }
+        h4 {
+            margin: 0px; 
+            padding: 0px;
+            font-family: Trebuchet, sans-serif;
+            font-size: 80%;
+            text-align: right;
+            color: #f6f6f6;
+        }
+
