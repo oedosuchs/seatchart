@@ -73,7 +73,6 @@
             <textarea id="reservedSeats" placeholder="e.g., John:1"></textarea>
         </div>
         <button onclick="assignSeats()">Assign Seats</button>
-        <button onclick="downloadTable()">Download Table</button>
         <div class="result" id="result"></div>
     </div>
 
@@ -104,7 +103,7 @@
                 seatAssignments[student] = evenlyDistributedSeats[index];
             });
 
-            displayResults(seatAssignments);
+            displayResults(seatAssignments, totalSeats);
         }
 
         function distributeSeatsEvenly(seats, count) {
@@ -116,33 +115,14 @@
             return distributedSeats;
         }
 
-        function displayResults(seatAssignments) {
+        function displayResults(seatAssignments, totalSeats) {
             const resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = '<h2>Seat Assignments</h2><table><tr><th>Student</th><th>Seat</th></tr>';
-            for (const [student, seat] of Object.entries(seatAssignments)) {
-                resultDiv.innerHTML += `<tr><td>${student}</td><td>${seat}</td></tr>`;
+            resultDiv.innerHTML = '<h2>Seat Assignments</h2><table><tr><th>Seat</th><th>Student</th></tr>';
+            for (let i = 1; i <= totalSeats; i++) {
+                const student = Object.keys(seatAssignments).find(key => seatAssignments[key] === i) || '';
+                resultDiv.innerHTML += `<tr><td>${i}</td><td>${student}</td></tr>`;
             }
             resultDiv.innerHTML += '</table>';
-        }
-
-        function downloadTable() {
-            const resultDiv = document.getElementById('result');
-            const table = resultDiv.querySelector('table');
-            if (!table) {
-                alert('No seat assignments to download.');
-                return;
-            }
-
-            const rows = Array.from(table.rows);
-            const csvContent = rows.map(row => Array.from(row.cells).map(cell => cell.textContent).join(',')).join('\n');
-            const blob = new Blob([csvContent], { type: 'text/csv' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'seat_assignments.csv';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
         }
     </script>
 </body>
