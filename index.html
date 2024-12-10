@@ -22,10 +22,11 @@
         </div>
         <h3>Student list</h3> 
         <textarea id="studentNames" placeholder="Enter student names. One per line."></textarea>
+        
         <div>
-         
-            <label for="reservedSeats">Reserve Seats (name:seat, one per line): </label>
-            <textarea id="reservedSeats" placeholder="e.g., Smith, John:10"></textarea>
+          <h3>Reserve Seats</h3> 
+            <label for="reservedSeats">Block seats by listing Name:Seat (one per line): </label>
+            <textarea id="reservedSeats" placeholder="e.g.: Smith, John:10"></textarea>
         </div>
         <button onclick="assignSeats()">Assign Seats</button>
         <div class="result" id="result"></div>
