@@ -24,7 +24,7 @@
         <textarea id="studentNames" placeholder="Enter student names. One per line."></textarea>
         <div>
          
-            <label for="reservedSeats">Reserved Seats (name:seat, one per line): </label>
+            <label for="reservedSeats">Reserve Seats (name:seat, one per line): </label>
             <textarea id="reservedSeats" placeholder="e.g., Smith, John:10"></textarea>
         </div>
         <button onclick="assignSeats()">Assign Seats</button>
@@ -79,36 +79,11 @@
         }
 
         function displayResults(seatAssignments) {
-    const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = '<h2>Seat Assignments</h2>'; // Add a header
-
-    // Initialize table HTML
-    let tableHTML = '<table border="1" style="border-collapse: collapse; width: 100%;">';
-    let rowOpen = false; // Track if a row is open
-    let colCount = 0; // Track column count
-
-    for (const [student, seat] of Object.entries(seatAssignments)) {
-        if (colCount % 4 === 0) { // Start a new row every 4 columns
-            if (rowOpen) {
-                tableHTML += '</tr>'; // Close the previous row if open
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<h2>Seat Assignments</h2>';
+            for (const [student, seat] of Object.entries(seatAssignments)) {
+                resultDiv.innerHTML += `<p>${student}: Seat ${seat}</p><hr>`;
             }
-            tableHTML += '<tr>';
-            rowOpen = true;
-        }
-
-        // Add a cell with student and seat info
-        tableHTML += ⁠ <td style="padding: 8px; text-align: left;"><strong>${student}</strong>: Seat ${seat}</td> ⁠;
-        colCount++;
-    }
-
-    // Close the last row if it's still open
-    if (rowOpen) {
-        tableHTML += '</tr>';
-    }
-
-    tableHTML += '</table>'; // Close the table
-    resultDiv.innerHTML += tableHTML; // Update the result div
-}
         }
     </script>
 </body>
