@@ -41,7 +41,7 @@
         textarea {
             width: 100%;
             height: 100px;
-            /* margin: 5px 25px 10px 0px; */
+            margin: 5px 100px 10px 0px;
         }
         input[type="number"] {
             width: 60px;
