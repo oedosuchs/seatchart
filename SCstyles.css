@@ -27,7 +27,7 @@
         button {
             float: right;
             padding: 10px 20px;
-            /* font-size: 16px; */
+            font-size: 100%;
             cursor: pointer;
             border: none;
             background-color: #fdb35a;
