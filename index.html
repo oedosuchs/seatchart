@@ -82,12 +82,32 @@
             return distributedSeats;
         }
 
-        function displayResults(seatAssignments) {
+       function displayResults(seatAssignments) {
             const resultDiv = document.getElementById('result');
             resultDiv.innerHTML = '<hr /> <h2>Seat Assignments</h2>';
-            for (const [student, seat] of Object.entries(seatAssignments)) {
-                resultDiv.innerHTML += `${student} — Seat: ${seat}</br>`;
-            }
+
+            const table = document.createElement('table');
+            table.style.width = '100%';
+            table.style.borderCollapse = 'collapse';
+
+            let row;
+            let cellIndex = 0;
+
+            Object.entries(seatAssignments).forEach(([student, seat], index) => {
+                if (cellIndex === 0) {
+                    row = table.insertRow();
+                }
+
+                const cell = row.insertCell();
+                cell.style.border = '1px solid #000';
+                cell.style.padding = '8px';
+                cell.style.textAlign = 'center';
+                cell.innerHTML = `${student} — Seat: ${seat}`;
+
+                cellIndex = (cellIndex + 1) % 4;
+            });
+
+            resultDiv.appendChild(table);
         }
     </script>
 </body>
