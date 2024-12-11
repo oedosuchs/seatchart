@@ -26,6 +26,7 @@
         }
         button {
             float: right;
+            font-family: 'Arvo', serif;
             padding: 10px 20px;
             font-size: 100%;
             cursor: pointer;
