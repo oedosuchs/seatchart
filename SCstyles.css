@@ -64,6 +64,13 @@
             margin: 0px; 
             padding: 0px;
             font-family: 'Arvo', serif;
+            font-size: 135%;
+            text-align: left;
+        }
+        h3 {
+            margin: 0px; 
+            padding: 0px;
+            font-family: 'Arvo', serif;
             font-size: 115%;
             text-align: left;
         }
