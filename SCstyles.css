@@ -24,7 +24,7 @@
             overflow-y: auto;
             width: 100%;
             max-width: 600px;
-            min-width: 325px;
+            min-width: 280px;
         }
         button {
             float: right;
