@@ -14,6 +14,9 @@
             padding: 20px;
             box-sizing: border-box;
         }
+        #footer {
+            display: block;
+        }
         .container {
             text-align: left;
             background: #f2f2f2;
