@@ -1,14 +1,15 @@
         html{
-                font-size: 1em;
+             font-size: 1em;
         }
         body {
             font-family: Trebuchet, sans-serif;
+            background-color: grey;
+            background-image: linear-gradient(180deg, #CBCBCB, #ABABAB);
             font-size: 90%;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             height: 100vh;
-            background-color: grey;
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
@@ -28,10 +29,10 @@
             float: right;
             font-family: 'Arvo', serif;
             padding: 10px 20px;
-            font-size: 100%;
+            font-size: 120%;
             cursor: pointer;
             border: none;
-            background-color: #fdb35a;
+            background-color: #FF7300;
             color: white;
             border-radius: 5px;
         }
@@ -55,7 +56,7 @@
         hr {
             border: none;
             height: 2px;
-            background-color: #fdb35a;
+            background-color: #FF7300;
             margin: 0px;
         }
         h1 {
