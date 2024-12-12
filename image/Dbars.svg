@@ -2,6 +2,6 @@
     height="50" 
     width="24" 
     xmlns="http://www.w3.org/2000/svg">
-    <polygon points="0,25 9,0 20,0 0,50" style="fill: #a8a8a8;" />
+    <polygon points="0,25 9.5,0 20,0 0,50" style="fill: #a8a8a8;" />
     <polygon points="24,25 24,50 14,50" style="fill: #a8a8a8;" />
 </svg>
