@@ -37,7 +37,7 @@
             background: #f2f2f2;
             padding: 25px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             max-height: 100%;
             overflow-y: auto;
             max-width: 600px;
@@ -58,7 +58,7 @@
             background-image: linear-gradient(50deg, #FF7300, #ff7e14, #FF7300);
             color: white;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
         button:hover {
             background-color: #b35000;
