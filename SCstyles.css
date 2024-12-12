@@ -3,7 +3,6 @@
             font-family: Trebuchet, sans-serif;
             background-color: grey;
             background: url(image/Dbars.svg) repeat-x, linear-gradient(#CBCBCB, #a8a8a8);
-            font-size: 90%;
             display: flex;
             justify-content: center;
             flex-direction: column;
