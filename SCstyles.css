@@ -27,7 +27,7 @@
             color: #000;
         }
         a:visited  {
-            color: #FF7300;
+            color: inherit;
         }
         .container {
             text-align: left;
