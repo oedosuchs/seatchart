@@ -55,6 +55,7 @@
             cursor: pointer;
             border: none;
             background-color: #FF7300;
+            background-image: linear-gradient(50deg, #FF7300, #ff9e4e #FF7300);
             color: white;
             border-radius: 5px;
         }
