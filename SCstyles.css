@@ -42,6 +42,9 @@
             overflow-y: auto;
             max-width: 600px;
             min-width: 280px;
+            background-image: url('image/Pete.svg');
+            background-repeat: no-repeat;
+            background-position: 150px 75%;
         }
         button {
             float: right;
@@ -111,10 +114,4 @@
         p {
             font-weight: normal;
             margin: 0px; 
-        }
-        
-        .Pete {
-            background-image: url('image/Pete.svg');
-            background-repeat: no-repeat;
-            background-position: bottom right;
         }
