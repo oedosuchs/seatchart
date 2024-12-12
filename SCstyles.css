@@ -24,10 +24,13 @@
             color: inherit;
         }
          a:hover  {
-            color: #000;
+            color: #FF7300;
         }
         a:visited  {
             color: inherit;
+        }
+        a:active  {
+            color: #FF7300;
         }
         .container {
             text-align: left;
