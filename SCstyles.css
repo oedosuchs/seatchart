@@ -118,3 +118,8 @@
             font-weight: normal;
             margin: 0px; 
         }
+
+        #OEDlogo {
+        aligh-self: block;
+        float: left;
+        }
