@@ -15,6 +15,7 @@
             box-sizing: border-box;
         }
         #footer {
+            clear: both;
             display: block;
             background-color: red;
         }
