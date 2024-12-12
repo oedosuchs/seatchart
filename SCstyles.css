@@ -44,7 +44,8 @@
             min-width: 280px;
             background-image: url('image/Pete.svg');
             background-repeat: no-repeat;
-            background-position: 150px 75%;
+            background-position: 90% 10px;
+            background-size: 300px;
         }
         button {
             float: right;
