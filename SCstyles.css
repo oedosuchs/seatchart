@@ -55,13 +55,13 @@
             cursor: pointer;
             border: none;
             background-color: #FF7300;
-            background-image: linear-gradient(50deg, #FF7300, #ff9e4e #FF7300);
+            background-image: linear-gradient(50deg, #FF7300, #ff9e4e, #FF7300);
             color: white;
             border-radius: 5px;
         }
         button:hover {
             background-color: #b35000;
-            background-image: linear-gradient(50deg, #b35000, #eb6a00 #b35000);
+            background-image: linear-gradient(50deg, #b35000, #eb6a00, #b35000);
         }
         .result {
             margin-top: 20px;
