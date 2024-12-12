@@ -1,5 +1,6 @@
         html{
             font-size: 1em;
+            font-size: 90%;
             font-family: Trebuchet, sans-serif;
             background-color: grey;
             background: url(image/Dbars.svg) repeat-x, linear-gradient(#CBCBCB, #a8a8a8);
