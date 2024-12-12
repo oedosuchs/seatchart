@@ -6,9 +6,9 @@
             background-color: grey;
             background: url(image/Dbars.svg) repeat-x, linear-gradient(#CBCBCB, #a8a8a8);
             font-size: 90%;
-            display: block;
-            
-            align: center;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
             height: 100vh;
             margin: 0;
             padding: 20px;
