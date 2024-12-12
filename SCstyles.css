@@ -8,6 +8,7 @@
             font-size: 90%;
             display: flex;
             justify-content: center;
+            flex-direction: column;
             align-items: flex-start;
             height: 100vh;
             margin: 0;
@@ -15,7 +16,7 @@
             box-sizing: border-box;
         }
         #footer {
-            background-color: blue;
+            background-color: orange;
         }
         .container {
             text-align: left;
