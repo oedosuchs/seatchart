@@ -17,7 +17,8 @@
             
         }
         #footer {
-            margin: 10px 100%;     
+            margin: 10px 20px;
+            float: right;
         }
         a:link  {
             color: inherit;
