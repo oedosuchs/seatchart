@@ -17,8 +17,8 @@
             
         }
         #footer {
-            margin: 10px auto;
-                
+            margin: 10px 50%;
+            transform: transpose -75px;     
         }
         a:link  {
             color: inherit;
