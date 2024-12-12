@@ -14,7 +14,7 @@
 <body>
     <div class="container">
         <img id="OEDlogo" src="image/OEDlogo.svg" width="auto" height="50px">
-        <h1>Seat Randomizer</h1> <h4>&copy <script>document.write(new Date().getFullYear())</script>, OED</h4> 
+        <h1>Seat Randomizer</h1>  
         <hr />
         <h4>Built for OSU by <a href="mailto:david.w.ernst@gmail.com">David W. Ernst</a> & <a href="josefdernst@gmail.com">Josef D. Ernst</a>, assisted by <a href="https://copilot.microsoft.com/">MS Copilot.</a></h4>
         <div>
@@ -31,6 +31,7 @@
             <label for="reservedSeats">Reserve seats by listing "Name:Seat" (One per line): </label>
             <textarea id="reservedSeats" placeholder="e.g.: Smith, John:10 (or Jane Doe:25)(or Faculty:76)"></textarea>
         </div>
+        <h4>&copy <script>document.write(new Date().getFullYear())</script>, OED</h4>
         <button onclick="assignSeats()">Assign Seats</button>
         <div class="result" id="result"></div>
     </div>
