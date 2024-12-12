@@ -20,6 +20,15 @@
             margin: 10px 0px;
                 
         }
+        a:link  {
+            color: inherit;
+        }
+         a:hover  {
+            color: #000;
+        }
+        a:visited  {
+            color: #FF7300;
+        }
         .container {
             text-align: left;
             background: #f2f2f2;
