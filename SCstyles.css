@@ -16,6 +16,7 @@
         }
         #footer {
             display: block;
+            background-color: red;
         }
         .container {
             text-align: left;
