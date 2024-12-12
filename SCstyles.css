@@ -7,6 +7,7 @@
             background: url(image/Dbars.svg) repeat-x, linear-gradient(#CBCBCB, #a8a8a8);
             font-size: 90%;
             display: flex;
+                flex-direction: column;
             justify-content: center;
             align-items: flex-start;
             height: 100vh;
@@ -15,8 +16,6 @@
             box-sizing: border-box;
         }
         #footer {
-            clear: both;
-            display: block;
             background-color: red;
         }
         .container {
