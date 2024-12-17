@@ -2,6 +2,7 @@
             font-size: 1em;
             font-size: 90%;
             font-family: 'Roboto', sans-serif;
+            font-weight: 300;
             background-color: grey;
             background: url(image/Dbars.svg) repeat-x, linear-gradient(#CBCBCB, #a8a8a8);
             display: flex;
@@ -85,7 +86,7 @@
             background-size: 300px;
         }
 
-        /*The black button*/
+        /*The old black button*/
 
         /*button {
           float: right;
@@ -111,12 +112,12 @@
           background: #333333;
         }*/
 
-        /*My good button*/
+        /* New orange good button with light orange hover highlight*/
 
         button {
           float: right;
-          font-family: 'Fairweather', sans-serif;
-          font-weight: bold;
+          /* font-family: 'Fairweather', sans-serif; */
+          font-weight: 700;
           padding: 10px 20px;
           font-size: 100%;
           cursor: pointer;
@@ -180,36 +181,38 @@
         h1 {
             margin: 0px; 
             padding: 0px;
-            font-family: 'Roboto', sans-serif;
+            font-family: "Fjalla One", serif;
             font-size: 250%;
             text-align: left;
         }
         h2 {
             margin: 15px 0px 15px 0px; 
             padding: 0px;
-            font-family: 'Roboto', sans-serif;
+            /*font-family: 'Roboto', sans-serif;*/
             font-size: 150%;
+            font-weight: 700;
             text-align: left;
         }
         h3 {
             margin: 0px; 
             padding: 0px;
-            font-family: 'Roboto', sans-serif;
+            /*font-family: 'Roboto', sans-serif;*/
             font-size: 130%;
+            font-weight: 500;
             text-align: left;
         }
         h4 {
             font-weight: normal;
             padding: 0px;
-            font-family: Trebuchet, sans-serif;
+            /*font-family: Trebuchet, sans-serif;*/
             font-size: 80%;
+            font-weight: 400;
             text-align: right;
             color: grey;
             margin: 5px 0px 10px 0px;
         }
         
         p {
-            font-weight: normal;
             margin: 0px; 
         }
 
