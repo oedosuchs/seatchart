@@ -86,37 +86,10 @@
             background-size: 300px;
         }
 
-        /*The old black button*/
-
-        /*button {
-          float: right;
-          font-family: 'Fairweather', sans-serif;
-          font-weight: bold;
-          padding: 10px 20px;
-          font-size: 100%;
-          cursor: pointer;
-          border: none;
-          background: #e65300;
-          color: white;
-          border-radius: 0px;
-          position: relative;
-          overflow: hidden;
-          transition: background-color 0.5s ease;
-        }
-        
-        button span {
-          display: inline-block;
-        }
-        
-        button:hover {
-          background: #333333;
-        }*/
-
-        /* New orange good button with light orange hover highlight*/
+        /* Orange button with light orange hover highlight*/
 
         button {
           float: right;
-          /* font-family: 'Fairweather', sans-serif; */
           font-weight: 700;
           padding: 10px 20px;
           font-size: 100%;
@@ -189,7 +162,6 @@
         h2 {
             margin: 15px 0px 15px 0px; 
             padding: 0px;
-            /*font-family: 'Roboto', sans-serif;*/
             font-size: 150%;
             font-weight: 700;
             letter-spacing: 0.25px;
@@ -198,7 +170,6 @@
         h3 {
             margin: 0px; 
             padding: 0px;
-            /*font-family: 'Roboto', sans-serif;*/
             font-size: 130%;
             font-weight: 500;
             letter-spacing: 0.25px;
@@ -207,7 +178,6 @@
         h4 {
             font-weight: normal;
             padding: 0px;
-            /*font-family: Trebuchet, sans-serif;*/
             font-size: 80%;
             font-weight: 400;
             text-align: right;
