@@ -1,15 +1,52 @@
         html{
             font-size: 1em;
             font-size: 90%;
-            font-family: Trebuchet, sans-serif;
+            font-family: 'Roboto', sans-serif;
             background-color: grey;
-            background: url(image/Dbars.svg) repeat-x, linear-gradient(#CBCBCB, #a8a8a8);
+            background: url(images/Dbars.svg) repeat-x, linear-gradient(#CBCBCB, #a8a8a8);
             display: flex;
             justify-content: center;
             flex-direction: column;
             align-items: center;
             box-sizing: border-box;
         }
+        .container-columns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 45%;
+            border-radius: 10px;
+            border: 0px solid #ccc;
+            padding: 10px;
+            background-color: #f2f2f2;
+        }
+        
+        .seat-pair {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px;
+            /*border-radius: 5px;*/
+            font-weight: bold;
+        }
+        
+        .column .seat-pair:nth-child(odd) {
+            background-color: #e65300;
+        }
+        
+        .column .seat-pair:nth-child(even) {
+            background-color: #ff9900;
+        }
+        
+        .seat-pair span {
+            margin-right: 10px;
+        }
+
         body {
             height: 100vh;
             margin: 0;
@@ -42,27 +79,83 @@
             overflow-y: auto;
             max-width: 600px;
             min-width: 280px;
-            background-image: url('image/Pete.svg');
+            background-image: url('images/Pete.svg');
             background-repeat: no-repeat;
             background-position: 90% 10px;
             background-size: 300px;
         }
-        button {
-            float: right;
-            font-family: 'Arvo', serif;
-            padding: 10px 20px;
-            font-size: 130%;
-            cursor: pointer;
-            border: none;
-            background-color: #FF7300;
-            background-image: linear-gradient(50deg, #FF7300, #ff7e14, #FF7300);
-            color: white;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+        /*The black button*/
+
+        /*button {
+          float: right;
+          font-family: 'Fairweather', sans-serif;
+          font-weight: bold;
+          padding: 10px 20px;
+          font-size: 100%;
+          cursor: pointer;
+          border: none;
+          background: #e65300;
+          color: white;
+          border-radius: 0px;
+          position: relative;
+          overflow: hidden;
+          transition: background-color 0.5s ease;
         }
+        
+        button span {
+          display: inline-block;
+        }
+        
         button:hover {
-            background-color: #b35000;
-            background-image: linear-gradient(50deg, #b35000, #eb6a00, #eb6a00, #b35000);
+          background: #333333;
+        }*/
+
+        /*My good button*/
+
+        button {
+          float: right;
+          font-family: 'Fairweather', sans-serif;
+          font-weight: bold;
+          padding: 10px 20px;
+          font-size: 100%;
+          cursor: pointer;
+          border: none;
+          background-color: #e65300;
+          color: white;
+          border-radius: 0px;
+          position: relative;
+          overflow: hidden;
+        }
+        
+        button span {
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+        
+        button::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background-color: #ff9900;
+            transition: height 0.2s ease;
+        }
+        
+        button:hover span {
+            transform: translateY(-3px);
+        }
+        
+        button:hover::after {
+            height: 6px;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: left;
         }
         .result {
             margin-top: 20px;
@@ -87,21 +180,21 @@
         h1 {
             margin: 0px; 
             padding: 0px;
-            font-family: 'Arvo', serif;
+            font-family: 'Roboto', sans-serif;
             font-size: 250%;
             text-align: left;
         }
         h2 {
             margin: 15px 0px 15px 0px; 
             padding: 0px;
-            font-family: 'Arvo', serif;
+            font-family: 'Roboto', sans-serif;
             font-size: 150%;
             text-align: left;
         }
         h3 {
             margin: 0px; 
             padding: 0px;
-            font-family: 'Arvo', serif;
+            font-family: 'Roboto', sans-serif;
             font-size: 130%;
             text-align: left;
         }
