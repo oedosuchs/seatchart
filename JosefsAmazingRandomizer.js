@@ -162,6 +162,7 @@ function printResults() {
             font-family: 'Roboto', sans-serif;
             font-weight: 400;
             font-size: 16px;
+            letter-spacing: 0.25px;
         }
         hr {
             border: none;
@@ -172,9 +173,9 @@ function printResults() {
         h2 {
             margin: 15px 0px 15px 0px; 
             padding: 0px;
-            /*font-family: "Fjalla One", sans-serif;*/
+            font-family: "Fjalla One", sans-serif;
             letter-spacing: 0.25px;
-            font-size: 375%;
+            font-size: 250%;
             letter-spacing: 0.25px;
             text-align: left;
         }
@@ -207,8 +208,8 @@ function printResults() {
             -webkit-print-color-adjust: exact;
         }
         .seat-pair span {
-            margin-right: 15px;
-            margin-left: 10px;
+            margin-right: 25px;
+            margin-left: 20px;
         }
 
         @media print {
