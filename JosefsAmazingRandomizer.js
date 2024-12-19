@@ -159,7 +159,8 @@ function printResults() {
          /*CSS styling for the printed version of the seat assignments table*/
          
         body {
-            font-family: 'Fairweather', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
         }
         .container-columns {
             display: flex;
