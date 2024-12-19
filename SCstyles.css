@@ -173,8 +173,7 @@
             padding: 0px;
             font-family: "Fjalla One", sans-serif;
             font-size: 130%;
-            color: ##444;
-            /*font-weight: 500;*/
+            color: #444;
             letter-spacing: 0.5px;
             text-align: left;
         }
@@ -183,9 +182,9 @@
             font-weight: normal;
             padding: 0px;
             font-size: 80%;
-            /*font-weight: 400;*/
+            font-weight: 400;
             text-align: right;
-            color: grey;
+            color: #7d7d7d;
             margin: 5px 0px 10px 0px;
         }
         
