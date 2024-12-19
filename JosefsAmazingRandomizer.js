@@ -162,10 +162,19 @@ function printResults() {
             font-family: 'Roboto', sans-serif;
             font-weight: 400;
         }
+        h2 {
+            margin: 15px 0px 15px 0px; 
+            padding: 0px;
+            font-family: "Fjalla One", sans-serif;
+            letter-spacing: 0.25px;
+            font-size: 175%;
+            letter-spacing: 0.25px;
+            text-align: left;
+        }
         .container-columns {
             display: flex;
             gap: 20px;
-            /*justify-content: center;*/
+            justify-content: center;
         }
         .column {
             display: flex;
@@ -181,17 +190,14 @@ function printResults() {
             display: flex;
             justify-content: space-between;
             padding: 7px;
-            /*font-weight: bold;*/
         }
         .column .seat-pair:nth-child(odd) {
             background-color: #ffc78f;
             -webkit-print-color-adjust: exact;
-            /*color: #fff; */
         }
         .column .seat-pair:nth-child(even) {
             background-color: #ffdab4;
             -webkit-print-color-adjust: exact;
-            /*color: #000;*/
         }
         .seat-pair span {
             margin-right: 15px;
