@@ -63,6 +63,11 @@ function assignSeats() {
         seatAssignments[student] = evenlyDistributedSeats[index];
     });
 
+    // Validate seat assignments
+    if (!validateSeatAssignments(seatAssignments)) {
+        return; // Stop execution if there are duplicate seat assignments
+    }
+
     // Display the final seat assignments in the result section
     displayResults(seatAssignments, reservedNames);
 
@@ -102,6 +107,26 @@ function distributeSeatsEvenly(seats, count, reservedSeats) {
         distributedSeats.push(seat);
     }
     return distributedSeats;
+}
+
+// Function to validate that no seat is assigned to more than one person
+function validateSeatAssignments(seatAssignments) {
+    const assignedSeats = Object.values(seatAssignments); // Extract all assigned seat numbers
+    const seatCounts = assignedSeats.reduce((counts, seat) => {
+        counts[seat] = (counts[seat] || 0) + 1; // Count occurrences of each seat
+        return counts;
+    }, {});
+
+    const duplicateSeats = Object.entries(seatCounts).filter(([seat, count]) => count > 1); // Find duplicates
+
+    if (duplicateSeats.length > 0) {
+        const duplicateMessage = duplicateSeats
+            .map(([seat, count]) => `Seat ${seat} is assigned to ${count} people.`)
+            .join('\n');
+        alert(`Error: Duplicate seat assignments detected.\n\n${duplicateMessage}`);
+        return false;
+    }
+    return true;
 }
 
 // Function to display the seat assignments in the result section of the page
