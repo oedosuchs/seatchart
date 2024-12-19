@@ -200,7 +200,7 @@ function printResults() {
             -webkit-print-color-adjust: exact;
         }
         .column .seat-pair:nth-child(even) {
-            background-color: #red;
+            background-color: #ffecd9;
             -webkit-print-color-adjust: exact;
         }
         .seat-pair span {
