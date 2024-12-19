@@ -107,8 +107,7 @@ function distributeSeatsEvenly(seats, count, reservedSeats) {
 // Function to display the seat assignments in the result section of the page
 function displayResults(seatAssignments, reservedNames) {
     const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = '<hr />
-        <h2>Seat Assignments</h2>';
+    resultDiv.innerHTML = '<hr /> <h2>Seat Assignments</h2>';
 
     const container = document.createElement('div');
     container.classList.add('container-columns');
