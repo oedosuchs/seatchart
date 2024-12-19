@@ -165,36 +165,37 @@ function printResults() {
         .container-columns {
             display: flex;
             gap: 20px;
-            justify-content: center;
+            /*justify-content: center;*/
         }
         .column {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            width: 45%;
-            border-radius: 10px;
+            gap: 1px;
+            width: 55%;
+            /*border-radius: 10px;
             border: 0px solid #ccc;
             padding: 10px;
-            background-color: #f2f2f2;
+            background-color: #f2f2f2;*/
         }
         .seat-pair {
             display: flex;
             justify-content: space-between;
-            padding: 5px;
-            font-weight: bold;
+            padding: 7px;
+            /*font-weight: bold;*/
         }
         .column .seat-pair:nth-child(odd) {
-            background-color: #e65300;
+            background-color: #ffc78f;
             -webkit-print-color-adjust: exact;
-            color: #fff; 
+            /*color: #fff; */
         }
         .column .seat-pair:nth-child(even) {
-            background-color: #ff9900;
+            background-color: #ffdab4;
             -webkit-print-color-adjust: exact;
-            color: #000;
+            /*color: #000;*/
         }
         .seat-pair span {
-            margin-right: 10px;
+            margin-right: 15px;
+            margin-left: 10px;
         }
 
         @media print {
@@ -203,13 +204,13 @@ function printResults() {
                 print-color-adjust: exact;
             }
             .column {
-                background-color: #f2f2f2;
+                background-color: #fff;
             }
             .column .seat-pair:nth-child(odd) {
-                background-color: #e65300;
+                background-color: #ffc78f;
             }
             .column .seat-pair:nth-child(even) {
-                background-color: #ff9900;
+                background-color: #ffdab4;
             }
         }
     `);
