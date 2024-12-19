@@ -161,6 +161,7 @@ function printResults() {
         body {
             font-family: 'Roboto', sans-serif;
             font-weight: 400;
+            font-size: 16px;
         }
         hr {
             border: none;
@@ -171,9 +172,9 @@ function printResults() {
         h2 {
             margin: 15px 0px 15px 0px; 
             padding: 0px;
-            font-family: "Fjalla One", sans-serif;
+            /*font-family: "Fjalla One", sans-serif;*/
             letter-spacing: 0.25px;
-            font-size: 175%;
+            font-size: 375%;
             letter-spacing: 0.25px;
             text-align: left;
         }
@@ -195,14 +196,14 @@ function printResults() {
         .seat-pair {
             display: flex;
             justify-content: space-between;
-            padding: 7px;
+            padding: 10px;
         }
         .column .seat-pair:nth-child(odd) {
-            background-color: #ffc78f;
+            background-color: #ffdab4;
             -webkit-print-color-adjust: exact;
         }
         .column .seat-pair:nth-child(even) {
-            background-color: #ffdab4;
+            background-color: #ffecd9;
             -webkit-print-color-adjust: exact;
         }
         .seat-pair span {
@@ -219,10 +220,10 @@ function printResults() {
                 background-color: #fff;
             }
             .column .seat-pair:nth-child(odd) {
-                background-color: #ffc78f;
+                background-color: #ffdab4;
             }
             .column .seat-pair:nth-child(even) {
-                background-color: #ffdab4;
+                background-color: #ffecd9;
             }
         }
     `);
