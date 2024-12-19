@@ -173,7 +173,6 @@ function printResults() {
         h2 {
             margin: 15px 0px 15px 0px; 
             padding: 0px;
-            font-family: "Fjalla One", sans-serif;
             letter-spacing: 0.25px;
             font-size: 250%;
             letter-spacing: 0.25px;
@@ -189,10 +188,7 @@ function printResults() {
             flex-direction: column;
             gap: 1px;
             width: 55%;
-            /*border-radius: 10px;
-            border: 0px solid #ccc;
-            padding: 10px;
-            background-color: #f2f2f2;*/
+            
         }
         .seat-pair {
             display: flex;
@@ -204,7 +200,7 @@ function printResults() {
             -webkit-print-color-adjust: exact;
         }
         .column .seat-pair:nth-child(even) {
-            background-color: #ffecd9;
+            background-color: #red;
             -webkit-print-color-adjust: exact;
         }
         .seat-pair span {
