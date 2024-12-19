@@ -107,7 +107,7 @@ function distributeSeatsEvenly(seats, count, reservedSeats) {
 // Function to display the seat assignments in the result section of the page
 function displayResults(seatAssignments, reservedNames) {
     const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = '<hr>
+    resultDiv.innerHTML = '<hr />
         <img src="image/OSUcolor.svg" width="75" alt="OSU">
         <h2>Seat Assignments</h2>';
 
