@@ -15,34 +15,28 @@
         .container-columns {
             display: flex;
             gap: 20px;
-            justify-content: center;
+            font-weight: 400;
         }
         
         .column {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            width: 45%;
-            border-radius: 10px;
-            border: 0px solid #ccc;
-            padding: 10px;
-            background-color: #f2f2f2;
+            gap: 1px;
+            width: 55%; 
         }
         
         .seat-pair {
             display: flex;
             justify-content: space-between;
-            padding: 5px;
-            /*border-radius: 5px;*/
-            font-weight: bold;
+            padding: 7px;
         }
         
         .column .seat-pair:nth-child(odd) {
-            background-color: #e65300;
+            background-color: #ffc78f;
         }
         
         .column .seat-pair:nth-child(even) {
-            background-color: #ff9900;
+            background-color: #ffdab4;
         }
         
         .seat-pair span {
