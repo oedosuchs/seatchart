@@ -164,6 +164,12 @@ function printResults() {
             font-family: 'Roboto', sans-serif;
             font-weight: 400;
         }
+        hr {
+            border: none;
+            height: 2px;
+            background-color: #FF7300;
+            margin: 0px;
+        }
         h2 {
             margin: 15px 0px 15px 0px; 
             padding: 0px;
