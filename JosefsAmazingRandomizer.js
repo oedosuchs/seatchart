@@ -200,7 +200,7 @@ function printResults() {
             -webkit-print-color-adjust: exact;
         }
         .column .seat-pair:nth-child(even) {
-            background-color: #ffecd9;
+            background-color: #fff3e6;
             -webkit-print-color-adjust: exact;
         }
         .seat-pair span {
@@ -220,7 +220,7 @@ function printResults() {
                 background-color: #ffdab4;
             }
             .column .seat-pair:nth-child(even) {
-                background-color: #ffecd9;
+                background-color: #fff3e6;
             }
         }
     `);
